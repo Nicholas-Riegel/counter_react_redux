@@ -2,15 +2,17 @@ import {createStore} from 'redux'
 
 //actions
 
-export const increment = () => {
+export const increment = (n) => {
     return {
-        type: 'INCREMENT'
+        type: 'INCREMENT',
+        payload: n
     }
 }
 
-export const decrement = () => {
+export const decrement = (n) => {
     return {
-        type: 'DECREMENT'
+        type: 'DECREMENT',
+        payload: n
     }
 }
 
@@ -19,9 +21,9 @@ export const decrement = () => {
 const reducer = (state = 0, actions) => {
     switch (actions.type) {
         case 'INCREMENT':
-            return state + 1
+            return state + actions.payload
         case 'DECREMENT':
-            return state - 1
+            return state - actions.payload
         default:
             return state
     }

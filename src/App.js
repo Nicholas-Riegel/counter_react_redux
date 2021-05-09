@@ -11,8 +11,8 @@ export const App = () => {
   return (
     <div>
       <p>Count: {yo}</p>
-      <button onClick={()=>dispatch(increment())}>+</button>
-      <button onClick={()=>dispatch(decrement())}>-</button>
+      <button onClick={()=>dispatch(increment(5))}>+</button>
+      <button onClick={()=>dispatch(decrement(5))}>-</button>
     </div>
   )
 }
